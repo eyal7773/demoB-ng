@@ -9,6 +9,11 @@ import { CakeComComponent } from './cake-com/cake-com.component';
 import { Output1Component } from './output1/output1.component';
 import { TwoWayComponent } from './two-way/two-way.component';
 import { FormsModule } from '@angular/forms';
+import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipe } from './pipes/custom.pipe';
+import { FormValidationComponent } from './form-validation/form-validation.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { FormsModule } from '@angular/forms';
     ChildComponent,
     CakeComComponent,
     Output1Component,
-    TwoWayComponent
+    TwoWayComponent,
+    PipesComponent,
+    CustomPipe,
+    FormValidationComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

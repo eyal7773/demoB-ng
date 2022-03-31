@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="col-12">
+<h1>My Form</h1>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+        
+    <select [(ngModel)]="mySelect" name="bbb">
+        <option value="{{'1'}}">Bzz</option>
+        <option value="{{'2'}}">Baa</option>
+        <option value="{{'3'}}">aaa</option>
+    </select>
+    <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email"
+                 class="form-control"
+                 aria-describedby="emailHelp"
+                 email
+                 required 
+                 ngModel
+                 #email="ngModel"
+                 name="email"
+
+                 placeholder="your@email.com"
+                 >
+          <div class="myErr"  
+          *ngIf="email.touched && email.invalid"
+           id="emailHelp" >This field is required AND must be an email!!!</div> 
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="text"
+                 class="form-control"
+                 required 
+                 pattern="^[a-zA-Z]+$"
+                 ngModel
+                 name="password"
+                 #password="ngModel"
+                 minlength="5"
+                 placeholder="your password..."
+                 >
+                 <div class="myErr"
+                    *ngIf="password.touched && password.invalid"
+                 >Hey! this need to be minimum 5 charaters!</div>
+        </div>
+        <button 
+            [disabled]="!loginForm.valid"    
+        
+                class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>

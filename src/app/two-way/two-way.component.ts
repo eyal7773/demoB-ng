@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+export enum Gender {
+  Male =1 ,
+  Female =2 ,
+  ABinary =3, 
+}
+
 @Component({
   selector: 'app-two-way',
   templateUrl: './two-way.component.html',
@@ -7,8 +13,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwoWayComponent implements OnInit {
 
-  var1 = 0; 
+  myEnum = Gender;
 
+  var1 = 0; 
+  
   myObject:{a:string; b:number;} = {a:'dddd',b:2};
 
   myArray:[string,number,number,{a:string}] = ['a',2,4,{a:'222'}];
@@ -35,11 +43,28 @@ export class TwoWayComponent implements OnInit {
     this.someVar = "Hey " + (Math.random()*10).toString();
   }
 
-  otherFunction() :{dd:number; aa:string;} {
-    return {dd:2,aa:'ss'};
+  otherFunction() :[number,boolean] {
+    return [1,true];
+  }
+
+  functionThatReturnObject(myObj:{c:string,v:boolean} ):{a:number; b:boolean;} {
+    return {a:1,b:true};
   }
 
 
+
+  /**
+   * 
+   * Client 
+   *   Form > Submit
+   *          > HTTP Request ---> Sql / Firebase 
+   * 
+   * ASPNET (Client+Server  FunA - Show the form)  Form>Submit > HTTP Req
+   *                            (Client+Server : FunB SQL) 
+   * 
+   * 
+   * 
+   */
 
 
 
