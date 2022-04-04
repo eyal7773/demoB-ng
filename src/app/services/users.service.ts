@@ -9,6 +9,12 @@ export class UsersService {
     name:'Moses',
     email:'moses@gmail.com'
   }
+  /**
+   * var a1 = new UsersService(); a 
+  -> header
+  -> footer
+   * 
+   */
 
   a:number = 0;
 
